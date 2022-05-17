@@ -53,7 +53,7 @@ this will show something like this
 CONTAINER ID   IMAGE                          COMMAND                  CREATED         STATUS         PORTS                                                  NAMES
 e43262873769   redis_mysql_deployment_myapp   "tail -f /dev/null"      2 minutes ago   Up 2 minutes                                                          deployment_myapp
 fdabcc82f724   redis_mysql_deployment_mysql   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   deployment_mysql
-a612c884b1b8   redis_mysql_deployment_redis   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:6379->6379/tcp, :::6379->6379/tcp              deployment_redis             deployment_redis
+a612c884b1b8   redis_mysql_deployment_redis   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:6379->6379/tcp, :::6379->6379/tcp              deployment_redis
 ```
 
 ## Running the app
