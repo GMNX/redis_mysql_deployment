@@ -1,0 +1,25 @@
+services:
+  redis:
+    container_name: deployment_redis
+    # I could use image: redis:7 , but since the requirement is to create 3 dockerfiles. I'll use dockerfile instead
+    build: redis
+    ports:
+      - "6379:6379"
+  mysql:
+    container_name: deployment_mysql
+    build: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - myapp_db:/var/lib/mysql 
+  myapp:
+    container_name: deployment_myapp
+    build: myapp
+    depends_on:
+      - redis
+      - mysql
+volumes:
+  myapp_db:
+    driver: local
